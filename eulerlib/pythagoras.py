@@ -43,6 +43,7 @@ def _xform(t,n):
         return (b,a,c)
 
 def _triplet():
+    """A generator function for primitive Pythagorean triples."""
     oldstack = [(3,4,5)]
     newstack = []
     while True:
@@ -55,6 +56,11 @@ def _triplet():
         yield t0
 
 def first_n_triples(n):
+    """Returns first *n* primitive Pythagorean triples.
+    
+    :param n: Maximum number of primitive triples desired.
+    :returns: A list of tuples [(a1,b1,c1),(a2,b2,c2),...,(an,bn,cn)]
+    """
     tgen = _triplet()
     result = [tgen.next() for i in range(n)]
     return result
