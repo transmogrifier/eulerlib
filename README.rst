@@ -9,13 +9,25 @@ A library of number theory related functions inspired by
 * Euler's totient function
 * Greatest Common Divisor (GCD) using Euclid's algorithm
 * Integer square root
-* Fibonacci number generation
+* Fibonacci numbers
 * Pandigital numbers
 * Palindrome numbers
-* Pythagorean triplets
+* Pythagorean triples
+
+Functions from this library can be used to solve problems in Project Euler.
 
 Installation
 ------------
+*eulerlib* is avalaible through Python Package Index ('PyPI 
+<https://pypi.python.org/pypi>`_) using `pip 
+<http://www.pip-installer.org/en/latest/index.html>`_.::
+
+   $ pip install --upgrade eulerlib
+
+To uninstall using `pip
+<http://www.pip-installer.org/en/latest/index.html>`_.::
+
+   $ pip uninstall eulerlib
 
 Usage
 -----
@@ -30,6 +42,8 @@ Modules
 +--------------+--------------------------------------------------------------+
 |fibonacci.py  | Functions related to the Fibonacci sequence.                 |
 +--------------+--------------------------------------------------------------+
+|pythagoras.py | Functions related to Pythagorean triples.                    |
++--------------+--------------------------------------------------------------+
 |etc.py        | Miscellaneous functions:                                     |
 |              |                                                              |
 |              | * Pandigital numbers                                         |
@@ -37,3 +51,8 @@ Modules
 |              | * Number to lists and vice versa                             |
 |              | * Palindrome numbers                                         |
 +--------------+--------------------------------------------------------------+
+
+License
+-------
+eulerlib is licensed under `Apache License 2.0 
+<https://www.apache.org/licenses/LICENSE-2.0.html>`_.

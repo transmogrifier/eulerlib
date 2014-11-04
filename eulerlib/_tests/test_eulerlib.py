@@ -82,6 +82,7 @@ class TestNumtheory(TestCase):
         self.assertEqual(tot60,16)
         div14688 = myDiv.divisors(14688L)
         self.assertEqual(len(div14688),sf14688[0])
+        self.assertEqual(sum(div14688),sf14688[1])
 
 class TestEtc(TestCase):
     def test_dec_to_base(self):
