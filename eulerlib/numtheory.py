@@ -266,31 +266,29 @@ class Divisors:
         :param num: An integer for which divisors are needed.
         :returns: A list [d1,d2,...dn] of divisors of *num*
         """
-        result = set()
+        result = []
         if (num < 1) or (num > self.limit):
             return result
-        elif (num == 1):
-            result.add(1)
+        result.append(1L)
+        if (num == 1):
             return result
         elif (num in self.primes_table):
-            result.update([1,num])
+            result.append(num)
             self.divisors_table[num] = result
             return result
         else:
             pfs = self.prime_factors(num)
             for (pi,ai) in pfs:
+                newdivs = []
                 for i in range(ai):
                     fact = pi**(i+1)
-                    result.add(fact)
-                    for (pxi,axi) in pfs:
-                        if (pxi != pi):
-                            for j in range(axi):
-                                fact1 = fact* (pxi**(j+1))
-                                result.add(fact1)
-            result.add(1)
-            result.add(num)
+                    for div in result:
+                        newdivs.append(div*fact)
+                result += newdivs
+                newdivs = []
+            result.sort()
             self.divisors_table[num] = result
-            return list(result)
+            return result
 
     def phi(self,num):
         """Returns the number of totatives of *num*
