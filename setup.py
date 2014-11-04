@@ -44,7 +44,6 @@ setup(name='eulerlib',
       install_requires=[
       'bitarray'
       ],
-      test_suite='nose.collector',
-      tests_require=['nose'],
+      test_suite='eulerlib._tests',
       zip_safe=False)
 

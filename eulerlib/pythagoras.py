@@ -15,7 +15,7 @@
 
 """
 .. module:: eulerlib.pythagoras
-    :synopsis: Functions related to Pythagorean triplets
+    :synopsis: Functions related to Pythagorean triples
 
 .. moduleauthor:: Sameer Marathe
 
@@ -55,8 +55,8 @@ def _triplet():
             newstack = []
         yield t0
 
-def first_n_triples(n):
-    """Returns first *n* primitive Pythagorean triples.
+def primitive_triples(n):
+    """Returns *n* primitive Pythagorean triples.
     
     :param n: Maximum number of primitive triples desired.
     :returns: A list of tuples [(a1,b1,c1),(a2,b2,c2),...,(an,bn,cn)]

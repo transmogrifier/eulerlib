@@ -27,11 +27,11 @@ def decimal_to_base(num,b):
     :param num: A decimal integer
     :param b: A decimal integer value for the base. 1 < b <= 36
     :returns: String that represents decimal *num* in base *b*
-    For example::
     
+    For example::
+
         >>>decimal_to_base(8,2)
         '1000'
-    
     """
     symbols = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p',
                'q','r','s','t','u','v','w','x','y','z']
@@ -75,11 +75,11 @@ def is_pandigital(num,start,stop):
     :param num: An integer to be checked for pandigitalness.
     :param start: Strating digit. 0 <= start <= 9
     :param stop: Ending digit start < stop <= 9
+    
     For example::
     
         >>is_pandigital(2134, 1, 4) 
         True
-    
     """
     if(start < 0 or stop < 0 or start >9 or stop >9):
         print "Error: start or stop is invalid"

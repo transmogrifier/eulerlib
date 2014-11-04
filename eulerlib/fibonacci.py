@@ -86,7 +86,7 @@ def fibo_num_digits(num,start=1):
     :param num: Desired number of digits in the last term of sequence.
     :param start: Starting digit of Fibonacci sequence (0 or 1, default=1)
     :returns: A list [f1,f2,..fi] such that fi is the first Fibonacci number
-    to have *num* digits
+              to have *num* digits
     """
     myfibo = _fibogen(start)
     result = []

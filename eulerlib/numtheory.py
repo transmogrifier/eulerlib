@@ -26,6 +26,7 @@ def primes(num):
     
     :param num: The upper limit for prime numbers list (pn < num)
     :returns: List of prime numbers [p1,p2,...pn] such that pn < num.
+    
     Uses the Sieve of Eratosthanes algorithm.
     """
     from math import sqrt as SQRT, floor as FLOOR
@@ -76,6 +77,7 @@ def is_square(num):
     
     :param num: Integer to be checked
     :returns: A tuple (is_square,root)
+    
     .. note::
        
        * *is_square* is *True* if *num* is a perfect square. 
@@ -116,6 +118,7 @@ def gcd(a,b):
     :param a: First integer
     :param b: Second integer
     :returns: Greatest Common Divisor (GCD) of *a* and *b*
+    
     Uses Euclid's algorithm.
     """
     if(a==b): return a
@@ -142,13 +145,8 @@ class Divisors:
         
         :param maxnum: Upper limit for the list of primes. (default = 1000)
         """
-        from time import time
         self.limit = maxnum
-        st = time()
         self.primes_table = primes(maxnum)
-        et = time()
-        print("It took {0:} seconds to generate primes up to {1:}"
-               .format(et-st,maxnum))
         self.sigma_table = {}
         self.primefact_table = {}
         self.pfactonly_table = {}
@@ -159,6 +157,7 @@ class Divisors:
         
         :param num: Integer for which sigma functions are needed.
         :returns: A tuple (sigma0,sigma1,s(n))
+        
         .. note::
             
             * sigma0 = number of divisors of *num*.
@@ -195,6 +194,7 @@ class Divisors:
         
         :param num: An integer for which prime factors are needed
         :returns: A list of tuples [(pf1,a1),...(pfi,ai)]
+        
        .. note::
         
             num = (pf1**a1)*(pf2**a2)..*(pfi**ai)
@@ -297,6 +297,7 @@ class Divisors:
         
         :param num: Integer for which number of totatives are needed.
         :returns: Number of totatives of *num*
+        
         .. note::
         
             A totative of an integer *num* is any integer *i* such that,

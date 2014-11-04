@@ -1,13 +1,6 @@
 eulerlib package
 ================
 
-Subpackages
------------
-
-.. toctree::
-
-    eulerlib.tests
-
 Submodules
 ----------
 
