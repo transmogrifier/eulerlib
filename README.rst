@@ -18,19 +18,40 @@ Functions from this library can be used to solve problems in Project Euler.
 
 Installation
 ------------
-*eulerlib* is avalaible through Python Package Index ('PyPI 
+*eulerlib* is avalaible through Python Package Index (`PyPI 
 <https://pypi.python.org/pypi>`_) using `pip 
 <http://www.pip-installer.org/en/latest/index.html>`_.::
 
-   $ pip install --upgrade eulerlib
+   >>> pip install --upgrade eulerlib
 
 To uninstall using `pip
 <http://www.pip-installer.org/en/latest/index.html>`_.::
 
-   $ pip uninstall eulerlib
+   >>> pip uninstall eulerlib
 
 Usage
 -----
+In Python console you can import functions/classes from eulerlib as needed::
+
+   >>> from eulerlib import primes
+   >>> p10 = primes(10)
+   >>> print p10
+   [2, 3, 5, 7]
+
+The *Divisors* class implements functions related to prime factorization,
+sigma functions etc.::
+
+   >>> from eulerlib import Divisors
+   >>> mydiv = Divisors(10000)
+   >>> div84 = mydiv.divisors(84) #divisors of 84
+   >>> print div84
+   [1L, 2L, 3L, 4L, 6L, 7L, 12L, 14L, 21L, 28L, 42L, 84L]
+   >>> pf840 = mydiv.prime_factors(840) #prime factors of 840
+   >>> print pf840
+   [(2, 3), (3, 1), (5, 1), (7, 1)]
+
+See reference for detailed documentation of all the functions in the library.
+See an example solved Project Euler problem.
 
 Modules
 -------

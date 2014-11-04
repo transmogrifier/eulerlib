@@ -1,6 +1,11 @@
 eulerlib package
 ================
 
+.. automodule:: eulerlib
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Submodules
 ----------
 
@@ -32,15 +37,6 @@ eulerlib.pythagoras module
 --------------------------
 
 .. automodule:: eulerlib.pythagoras
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-Module contents
----------------
-
-.. automodule:: eulerlib
     :members:
     :undoc-members:
     :show-inheritance:

@@ -30,7 +30,7 @@ def decimal_to_base(num,b):
     
     For example::
 
-        >>>decimal_to_base(8,2)
+        >>> decimal_to_base(8,2)
         '1000'
     """
     symbols = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p',
@@ -78,7 +78,7 @@ def is_pandigital(num,start,stop):
     
     For example::
     
-        >>is_pandigital(2134, 1, 4) 
+        >>> is_pandigital(2134, 1, 4) 
         True
     """
     if(start < 0 or stop < 0 or start >9 or stop >9):
