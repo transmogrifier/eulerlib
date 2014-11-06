@@ -137,7 +137,7 @@ def gcd(a,b):
     return small
 
 
-def _lcm2(a,b):
+def lcm(a,b):
     """Calculates the Least Common Multiple (LCM) of two integers.
     
     :param a: First integer
@@ -149,16 +149,28 @@ def _lcm2(a,b):
         lcm_ab = abs(a*b)/gcd(a,b)
     return lcm_ab  
 
-def lcm(num_list):
-    """Calculate the Least Common Multiple of a list of numbers.
+
+def lcm_n(num_list):
+    """Calculate the Least Common Multiple of a list of integers.
     
-    :param num_list: A list of integers.
+    :param num_list: A list of integers *[i1,i2,i3,...,in]*
     :returns: LCM of the integers in *num_list*
+    
+    Uses the associative property LCM(a,b,c) = LCM(*LCM(a,b)*,c)
     """
-    result = 0
-    if num_list != [] or sum(num_list) != 0:
-        pass
+    result = 0L
+    lennum = len(num_list)
+    if not (lennum <=1 or sum(num_list) == 0L):
+        cindex = 1
+        while cindex < lennum:
+            if cindex == 1:
+                curr_lcm = lcm(num_list[cindex-1],num_list[cindex])
+            else:
+                curr_lcm = lcm(curr_lcm,num_list[cindex])
+            cindex += 1
+        result = curr_lcm
     return result
+
 
 class Divisors:
     """Implements methods related to prime factors and divisors."""
