@@ -133,24 +133,80 @@ def word_numerical_val(word):
     """
     import string
     num_val = 0L
-    ucase = string.ascii_uppercase
     lcase = string.ascii_lowercase
-    for char in word:
-        if (not char in lcase) and (not char in ucase):
+    test_word = word.lower()
+    for char in test_word:
+        if not char in lcase:
             print "Error: Illegal character in the word"
             num_val = 0L
             break
         else:
-            loc = ucase.find(char)
+            loc = lcase.find(char)
             if (loc != -1):
                 num_val = num_val + loc + 1
             else:
-                loc = lcase.find(char)
-                if (loc !=-1):
-                    num_val = num_val + loc + 1
-                else:
-                    print "Error: Illegal character in the word"
-                    num_val = 0L
-                    break
+                print "Error: Illegal character in the word"
+                num_val = 0L
+                break
     return num_val
 
+
+def write_number(num):
+    """Return the written English language string representation of *num*
+    
+    :param num: An integer number
+    
+    For example::
+        >>> write_num(132)
+        >>> 'one hundred and thirty-two'
+    """
+    ones = ["zero","one","two","three","four","five","six","seven","eight",
+            "nine"]
+    teens = ["eleven","twelve","thirteen","fourteen","fifteen","sixteen",
+             "seventeen","eighteen","nineteen"]
+    tens = ["ten","twenty","thirty","forty","fifty","sixty","seventy","eighty",
+            "ninety"]
+    hundred = " hundred"
+    hundred_and = " hundred and "
+    thousand = " thousand"
+    thousand_and = " thousand "
+    minus = "minus "
+    num1 = abs(num)
+    number = ""
+    if num1 < 1000000:
+        if num1 < 10:
+            number = ones[num1]
+        elif num1 >= 10 and num1 < 100:
+            if num1%10 == 0:
+                #divisible by 10
+                number = tens[(num1//10)-1]
+            elif num1 > 10 and num1 < 20:
+                #teens
+                number = teens[num1-11]
+            else:
+                #create number by recursion
+                tens_val = num1//10
+                ones_val = num1%10
+                number = tens[tens_val-1] + "-" + ones[ones_val]
+        elif num1 >= 100 and num1 < 1000:
+            if num1%100 == 0:
+                hundreds_val = num1//100
+                number = write_number(hundreds_val) + hundred
+            else:
+                hundreds_val = num1//100
+                rest_of_num = num1%100
+                number = ones[hundreds_val] + hundred_and + \
+                         write_number(rest_of_num)
+        else:
+            thousands_val = num1//1000
+            rest_of_num = num1%1000
+            if rest_of_num == 0:            
+                number = write_number(thousands_val) + thousand
+            else:
+                number = write_number(thousands_val) + thousand_and + \
+                         write_number(rest_of_num)
+        if num < 0:
+            number = minus + number
+    else:
+        number = "out of range"
+    return number
