@@ -210,3 +210,66 @@ def write_number(num):
     else:
         number = "out of range"
     return number
+
+
+def collapse_lists(list1,list2,compf,pathf):
+    """Function to collapse two lists into a single list based on comparison
+    and path functions.
+    
+    :param list1: First list
+    :param list2: Second list
+    :param compf: Comparator function to compare values returned by
+                  path function.
+    :param pathf: Function that takes a list of elements and returns a
+                  value of the same type.
+    :returns: A list with length = len(list2)
+    
+    .. Note::
+    
+    * Both lists must have values of the same type 'T'
+    * Comparison function should take a list of values of type 'T' and return
+      a value of type 'T'.
+    * Path function should take a list of values of type 'T' and return a 
+      value of type 'T'.
+    * The function calculates path totals based on paths from list1 to list2.
+    * The difference between lengths of list1 and list2 should be 1
+    
+    E.g. to calculate maximum sum of path values - path function => sum, 
+    comparison function => max. ::
+        >>> list1 = [12,37,53,46]
+        >>> list2 = [23,34,47]
+        >>> compf = max
+        >>> pathf = sum
+        >>> collapse_lists(list1,list2,compf,pathf)
+        >>> [60, 87, 100]
+    """
+    result = []
+    len1 = len(list1)
+    len2 = len(list2)
+    if (abs(len1-len2) != 1):
+        pass
+    elif(list1 == []):
+        result = list(list2)
+    elif(list2 == []):
+        result = list(list1)
+    else:
+        small2large = True
+        if(len1 > len2):
+            small2large = False
+        for j in range(len2):
+            if(small2large):            
+                if(j == 0):
+                    val = pathf([list2[j],list1[0]])
+                elif(j == len2-1):
+                    val = pathf([list2[j],list1[len1-1]])
+                else:
+                    pv1 = pathf([list2[j],list1[j-1]])
+                    pv2 = pathf([list2[j],list1[j]])
+                    val = compf([pv1, pv2])
+                result.append(val)
+            else:
+                pv1 = pathf([list2[j],list1[j+1]])
+                pv2 = pathf([list2[j],list1[j]])
+                val = compf([pv1, pv2])
+                result.append(val)
+    return result
