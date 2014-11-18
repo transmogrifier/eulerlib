@@ -1,8 +1,8 @@
-========
-EulerLib
-========
-A library of number theory related functions inspired by 
-`Project Euler <https://projecteuler.net/>`_. Available functions include:
+Introduction
+------------
+*Eulerlib* is a library of recreational mathematics and number theory related 
+functions inspired by  `Project Euler <https://projecteuler.net/>`_. Available 
+functions include:
 
 * Prime number generation
 * Divisor functions (sigma functions)
@@ -14,7 +14,8 @@ A library of number theory related functions inspired by
 * Palindrome numbers
 * Pythagorean triples
 
-Functions from this library can be used to solve problems in Project Euler.
+Functions from this library can be used to solve recreational mathematics and
+programming problems such as problems in Project Euler.
 
 Installation
 ------------
@@ -50,8 +51,8 @@ sigma functions etc.::
    >>> print pf840
    [(2, 3), (3, 1), (5, 1), (7, 1)]
 
-See reference for detailed documentation of all the functions in the library.
-See an example solved Project Euler problem.
+See :ref:`reference` for detailed documentation of all the functions in the 
+library. See an example solved Project Euler problem.
 
 Modules
 -------

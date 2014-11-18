@@ -8,6 +8,8 @@ Welcome to eulerlib's documentation!
 
 .. include:: ../README.rst
 
+.. _reference:
+
 Reference
 ---------
 
@@ -15,7 +17,6 @@ Reference
    :maxdepth: 4
 
    eulerlib
-
 
 Indices and tables
 ------------------

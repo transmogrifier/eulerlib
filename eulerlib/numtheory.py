@@ -172,6 +172,57 @@ def lcm_n(num_list):
     return result
 
 
+def nCr(n,r):
+    """Calculate ways of selecting *r* members out of a collection of *n*
+    members.
+    
+    :param n: Size of the collection
+    :param r: Number of members to be selected from the collection
+    :returns: n!/[r!(n-r)!]
+    
+    .. note::
+        
+        :sup:`n` C :sub:`r` is typically read as *n combination r*. Order of 
+        members is *not* important in the combination. E.g. There are :sup:`4`   
+        C :sub:`2` = 6 ways of selecting two members out of a collection 
+        (A, B, C, D) => AB, AC, AD, BC, BD, CD.
+    """
+    result = 0
+    if n >= 0 and r >= 0 and r <= n:
+        num = 1
+        denom = 1
+        for i in range(r):
+            num *= (n-i)
+            denom *= (i+1)
+        result = num/denom
+    return result
+
+
+def nPr(n,r):
+    """Calculate number of permutations of lengt *r* out of a collection of 
+    *n* members (No repeated members).
+    
+    :param n: Size of the collection
+    :param r: Number of members to be permutated.
+    :returns: n!/[(n-r)!]
+    
+    .. note::
+        
+        :sup:`n` P :sub:`r` is typically read as *n permutation r*. Order of 
+        members *is* important in the permutation. E.g. There are :sup:`4` P 
+        :sub:`2` = 12 permutations of length 2 out of a collection  
+        (A, B, C, D) => AB, AC, AD, BA, BC, BD, CA, CB, CD, DA, DB, DC.
+    """
+    result = 0
+    if n >= 0 and r >= 0 and r <= n:
+        num = 1
+        denom = 1
+        for i in range(r):
+            num *= (n-i)
+        result = num/denom
+    return result
+
+
 class Divisors:
     """Implements methods related to prime factors and divisors."""
     
