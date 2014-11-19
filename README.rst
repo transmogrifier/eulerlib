@@ -1,6 +1,6 @@
-========
 EulerLib
-========
+********
+
 *Eulerlib* is a library of recreational mathematics and number theory related 
 functions inspired by  `Project Euler <https://projecteuler.net/>`_. Available 
 functions include:
@@ -33,7 +33,7 @@ To uninstall using `pip
 
 Usage
 -----
-In Python console you can import functions/classes from eulerlib as needed::
+In Python console you can import functions/classes from eulerlib as needed. ::
 
    >>> from eulerlib import primes
    >>> p10 = primes(10)
@@ -41,7 +41,7 @@ In Python console you can import functions/classes from eulerlib as needed::
    [2, 3, 5, 7]
 
 The *Divisors* class implements functions related to prime factorization,
-sigma functions etc.::
+sigma functions etc. ::
 
    >>> from eulerlib import Divisors
    >>> mydiv = Divisors(10000)
