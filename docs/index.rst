@@ -11,7 +11,7 @@ Welcome to eulerlib's documentation!
 .. _reference:
 
 Reference
----------
+*********
 
 .. toctree::
    :maxdepth: 4

@@ -14,7 +14,7 @@
 #   limitations under the License.
 
 """
-.. module:: eulerlib.etc
+.. module:: eulerlib.numtheory
     :synopsis: Miscellaneous functions.
 
 .. moduleauthor:: Sameer Marathe
@@ -29,7 +29,7 @@ def decimal_to_base(num,b):
     :returns: String that represents decimal *num* in base *b*
     
     For example::
-
+    
         >>> decimal_to_base(8,2)
         '1000'
     """
@@ -59,8 +59,21 @@ def decimal_to_base(num,b):
         return numstring
 
 
-def is_palindrome(num):
-    """Returns *True* if *num* is a Palindrome number"""
+def is_palindrome(num,base=10):
+    """Returns *True* if decimal number *num* is a Palindrome number in *base*.
+    
+    :param num: Decimal number to be tested
+    :param base: Base of the number system in which *num* is to be tested.
+                 (Default = 10)
+    :returns: *True* if *num* is palindromic in *base*
+    
+    For example::
+    
+        >>> is_palidrome(3875783) #Test in default base = 10
+        >>> True
+        >>> is_palidrome(9,2) # 9 in base 2 is 1001
+        >>> True
+    """
     str_num = str(num)
     rev_num = str_num[::-1]
     if(str_num == rev_num):
@@ -157,6 +170,7 @@ def write_number(num):
     :param num: An integer number
     
     For example::
+    
         >>> write_num(132)
         >>> 'one hundred and thirty-two'
     """
@@ -224,18 +238,19 @@ def collapse_lists(list1,list2,compf,pathf):
                   value of the same type.
     :returns: A list with length = len(list2)
     
-    .. Note::
+    .. note::    
+        * Both lists must have values of the same type 'T'
+        * Comparison function should take a list of values of type 'T' and 
+          return a value of type 'T'.
+        * Path function should take a list of values of type 'T' and return a 
+          value of type 'T'.
+        * The function calculates path totals based on paths from list1 to 
+          list2.
+        * The difference between lengths of list1 and list2 should be 1
     
-    * Both lists must have values of the same type 'T'
-    * Comparison function should take a list of values of type 'T' and return
-      a value of type 'T'.
-    * Path function should take a list of values of type 'T' and return a 
-      value of type 'T'.
-    * The function calculates path totals based on paths from list1 to list2.
-    * The difference between lengths of list1 and list2 should be 1
+    For example: To calculate maximum sum of path values - 
+    path function => sum, comparison function => max::
     
-    E.g. to calculate maximum sum of path values - path function => sum, 
-    comparison function => max. ::
         >>> list1 = [12,37,53,46]
         >>> list2 = [23,34,47]
         >>> compf = max

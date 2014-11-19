@@ -1,5 +1,5 @@
-Introduction
-------------
+EulerLib
+********
 *Eulerlib* is a library of recreational mathematics and number theory related 
 functions inspired by  `Project Euler <https://projecteuler.net/>`_. Available 
 functions include:
