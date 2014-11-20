@@ -75,6 +75,8 @@ def is_palindrome(num,base=10):
         >>> True
     """
     str_num = str(num)
+    if base != 10:
+        str_num = decimal_to_base(num,base)
     rev_num = str_num[::-1]
     if(str_num == rev_num):
         return True

@@ -22,12 +22,12 @@ Installation
 ------------
 *eulerlib* is avalaible through Python Package Index (`PyPI 
 <https://pypi.python.org/pypi>`_) using `pip 
-<http://www.pip-installer.org/en/latest/index.html>`_.::
+<http://www.pip-installer.org/en/latest/index.html>`_. ::
 
    >>> pip install --upgrade eulerlib
 
 To uninstall using `pip
-<http://www.pip-installer.org/en/latest/index.html>`_.::
+<http://www.pip-installer.org/en/latest/index.html>`_. ::
 
    >>> pip uninstall eulerlib
 
