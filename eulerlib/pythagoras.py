@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#   Copyright 2014 Sameer Suhas Marathe
+#   Copyright 2015 Sameer Suhas Marathe
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -62,7 +62,7 @@ def primitive_triples(n):
     :returns: A list of tuples [(a1,b1,c1),(a2,b2,c2),...,(an,bn,cn)]
     """
     tgen = _triplet()
-    result = [tgen.next() for i in range(n)]
+    result = [next(tgen) for i in range(n)]
     return result
         
             

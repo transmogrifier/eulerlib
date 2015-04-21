@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#   Copyright 2014 Sameer Suhas Marathe
+#   Copyright 2015 Sameer Suhas Marathe
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -15,14 +15,14 @@
 
 """Setup file for EulerLib"""
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 def readme():
     with open('README.rst') as f:
         return f.read()
 
 setup(name='eulerlib',
-      version='0.0.1',
+      version='0.1',
       description=('A library of number theory related '
                    'functions inspired by Project Euler.'),
       long_description=readme(),
@@ -31,7 +31,7 @@ setup(name='eulerlib',
       author_email='transmogrifier@gmail.com',
       license='Apache License 2.0',
       classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 4 - Beta',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 2.7',
         'Topic :: Scientific/Engineering :: Mathematics',
@@ -40,7 +40,7 @@ setup(name='eulerlib',
         'Intended Audience :: End Users/Desktop'
       ],
       keywords='mathematics project_euler number_theory prime_numbers',
-      packages=['eulerlib'],
+      packages= find_packages(exclude=['eulerlib._tests']),
       install_requires=[
       'bitarray'
       ],

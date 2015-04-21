@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#   Copyright 2014 Sameer Suhas Marathe
+#   Copyright 2015 Sameer Suhas Marathe
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -58,7 +58,7 @@ def first_n_fibo(n,start=1):
     :returns: A list [f1,f2,...,fn] where f1 = 1 if start = 1
     """
     myfibo = _fibogen(start)
-    result = [myfibo.next() for i in range(n)]
+    result = [next(myfibo) for i in range(n)]
     return result
 
 

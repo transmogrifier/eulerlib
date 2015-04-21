@@ -47,7 +47,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'eulerlib'
-copyright = u'2014, Sameer Marathe'
+copyright = u'2015, Sameer Marathe'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -267,7 +267,7 @@ texinfo_documents = [
 epub_title = u'eulerlib'
 epub_author = u'Sameer Marathe'
 epub_publisher = u'Sameer Marathe'
-epub_copyright = u'2014, Sameer Marathe'
+epub_copyright = u'2015, Sameer Marathe'
 
 # The basename for the epub file. It defaults to the project name.
 #epub_basename = u'eulerlib'
