@@ -2,7 +2,7 @@ EulerLib
 ********
 
 *Eulerlib* is a library of recreational mathematics and number theory related 
-functions inspired by  `Project Euler <https://projecteuler.net/>`_. Available 
+functions inspired by  `Project Euler`_. Available 
 functions include:
 
 * Prime number generation
@@ -20,14 +20,11 @@ programming problems such as problems in Project Euler.
 
 Installation
 ------------
-*eulerlib* is avalaible through Python Package Index (`PyPI 
-<https://pypi.python.org/pypi>`_) using `pip 
-<http://www.pip-installer.org/en/latest/index.html>`_. ::
+*eulerlib* is avalaible through Python Package Index (`PyPI`_) using `pip`_. ::
 
    >>> pip install --upgrade eulerlib
 
-To uninstall using `pip
-<http://www.pip-installer.org/en/latest/index.html>`_. ::
+To uninstall using `pip`_. ::
 
    >>> pip uninstall eulerlib
 
@@ -52,8 +49,22 @@ sigma functions etc. ::
    >>> print pf840
    [(2, 3), (3, 1), (5, 1), (7, 1)]
 
-See :ref:`reference` for detailed documentation of all the functions in the 
-library. See an example solved Project Euler problem.
+**Example**: Solved `Project Euler`_ `problem 3`_. ::
+
+    from eulerlib import is_square, primes
+    #get approximate square root of number since
+    #largest prime factor < sq. root
+    (is_sq, sqroot) = is_square(600851475143L)
+    #get a list of primes less than the approx. square root.
+    test_primes = primes(sqroot + 1L)
+    #test the primes from the list to find the largest factor
+    len_p = len(test_primes)
+    for i in range(1,len_p+1):
+        j = 0 - i
+        test_fact = test_primes[j]
+        if 600851475143L%test_fact == 0:
+            break
+    answer = test_fact #Set the answer
 
 Modules
 -------
@@ -77,5 +88,10 @@ Modules
 
 License
 -------
-eulerlib is licensed under `Apache License 2.0 
-<https://www.apache.org/licenses/LICENSE-2.0.html>`_.
+eulerlib is licensed under `Apache License 2.0`_.
+
+.. _Project Euler: https://projecteuler.net
+.. _PyPI: https://pypi.python.org/pypi
+.. _pip: https://pip.pypa.io
+.. _Apache License 2.0: https://www.apache.org/licenses/LICENSE-2.0.html
+.. _problem 3: https://projecteuler.net/problem=3
