@@ -66,6 +66,8 @@ sigma functions etc. ::
             break
     answer = test_fact #Set the answer
 
+See complete `documentation`_.
+
 Modules
 -------
 +--------------+--------------------------------------------------------------+
@@ -86,6 +88,11 @@ Modules
 |              | * Palindrome numbers                                         |
 +--------------+--------------------------------------------------------------+
 
+Development
+-----------
+Source code repositories (`GitHub`_, `BitBucket`_) are available. 
+`Bug reports`_ and suggestions are most welcome.
+
 License
 -------
 eulerlib is licensed under `Apache License 2.0`_.
@@ -95,3 +102,7 @@ eulerlib is licensed under `Apache License 2.0`_.
 .. _pip: https://pip.pypa.io
 .. _Apache License 2.0: https://www.apache.org/licenses/LICENSE-2.0.html
 .. _problem 3: https://projecteuler.net/problem=3
+.. _GitHub: https://github.com/transmogrifier/eulerlib
+.. _BitBucket: https://bitbucket.org/transmogrifier/eulerlib
+.. _Bug reports: https://github.com/transmogrifier/eulerlib/issues
+.. _documentation: http://pythonhosted.org/eulerlib
