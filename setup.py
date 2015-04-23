@@ -26,7 +26,7 @@ setup(name='eulerlib',
       description=('A library of number theory related '
                    'functions inspired by Project Euler.'),
       long_description=readme(),
-      url='',
+      url='https://bitbucket.org/transmogrifier/eulerlib',
       author='Sameer Marathe',
       author_email='transmogrifier@gmail.com',
       license='Apache License 2.0',
