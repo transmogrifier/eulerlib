@@ -223,6 +223,35 @@ def nPr(n,r):
     return result
 
 
+def digital_sum(num):
+    """Calculate the digital sum of a number *num* in base 10
+    
+    :param num: Number for which digital sum is to be calculated. *num* should
+                be in base 10.
+    :returns: Digital sum of *num* in base 10.
+    """
+    from .etc import num_to_list
+    testnum = num
+    if num < 0:
+        testnum = abs(num)
+    return sum(num_to_list(testnum))
+
+
+def digital_root(num):
+    """Calculate the digital root of a number *num* in base 10
+    
+    :param num: Number for which digital root is to be calculated. *num* 
+                should be in base 10.
+    :returns: Digital root of *num* in base 10.
+    """
+    testnum = num
+    if num < 0:
+        testnum = abs(num)
+    while testnum > 9:
+        testnum = digital_sum(testnum)
+    return testnum
+
+
 class Divisors:
     """Implements methods related to prime factors and divisors."""
     
