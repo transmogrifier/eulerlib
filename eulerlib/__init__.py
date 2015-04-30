@@ -19,8 +19,9 @@
 
 """
 
-__all__ = ["numtheory", "fibonacci", "pythagoras", "etc"]
+__all__ = ["numtheory", "prime_numbers", "fibonacci", "pythagoras", "etc"]
 from .numtheory import *
+from .prime_numbers import *
 from .fibonacci import *
 from .pythagoras import *
 from .etc import *

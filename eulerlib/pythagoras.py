@@ -20,6 +20,9 @@
 .. moduleauthor:: Sameer Marathe
 
 """
+
+__all__ = ["primitive_triples"]
+
 def _xform(t,n):
     """Matrix transform triplet *t* using *n*th matrix (n = 1,2 or 3)"""
     a = 0

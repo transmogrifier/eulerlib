@@ -21,56 +21,10 @@
 
 """
 
-def primes(num):
-    """Returns a list of prime numbers.
-    
-    :param num: The upper limit for prime numbers list (pn < num)
-    :returns: List of prime numbers [p1,p2,...pn] such that pn < num.
-    
-    Uses the Sieve of Eratosthanes algorithm.
-    """
-    from math import sqrt as SQRT, floor as FLOOR
-    from bitarray import bitarray
-    maxprime = num
-    result = []
-    if(maxprime <=2):
-        return result
-    # Setup a bitarray that represents only the odd numbers from 1 to maxprime
-    num_odd = maxprime//2
-    domain = bitarray(num_odd)
-    domain.setall(True)
-    #The first element of the bitarray represents 1, set it to False to 
-    # indicate it is not prime
-    domain[0] = False
-    # Add the only even prime to the results array.
-    currprime = 2
-    result.append(currprime)
-    start = 0
-    done = False
-    root = FLOOR(SQRT(maxprime))
-    while (not done):
-        for index in range(start,num_odd):
-            if(domain[index]):
-                break
-        currprime = 2*index+1
-        result.append(currprime)
-        if(currprime > root):
-            done = True
-        else:
-            start = index + currprime
-            if(start < num_odd-1):
-                for index1 in range(start,num_odd,currprime):
-                    domain[index1] = False
-            elif start == num_odd-1:
-                domain[start] = False
-            start = index+1
-    # Move the remaining primes into an array
-    for i in range(index+1,num_odd):
-        if(domain[i]):
-            result.append(2*i+1)
-    del domain
-    return result
-
+__all__ = ["is_square", "gcd", "lcm", "lcm_n", "nCr", "nPr", "digital_sum",
+           "digital_root","Divisors"]
+      
+from .prime_numbers import primes
 
 def is_square(num):
     """Determines if a positive integer *num* is the perfect square.

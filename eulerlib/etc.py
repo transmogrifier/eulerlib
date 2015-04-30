@@ -21,6 +21,10 @@
 
 """
 
+__all__ = ["decimal_to_base", "is_palindrome", "is_pandigital", "num_to_list",
+           "list_to_num", "word_numerical_val", "write_number", 
+           "collapse_lists"]
+
 def decimal_to_base(num,b):
     """Converts *num* from decimal to base *b*
     

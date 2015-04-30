@@ -25,36 +25,37 @@ from  unittest import TestCase
 import eulerlib.numtheory as NT
 import eulerlib.etc as ETC
 import eulerlib.fibonacci as FIBO
+import eulerlib.prime_numbers as P
 
 class TestNumtheory(TestCase):
     
     def test_primes1e1(self):
-        test_primes = NT.primes(10L)
+        test_primes = P.primes(10L)
         self.assertEqual(len(test_primes),4) #Number of prime
         self.assertEqual(test_primes[-1],7) #Last prime in the list
         
     def test_primes1e2(self):
-        test_primes = NT.primes(100L)
+        test_primes = P.primes(100L)
         self.assertEqual(len(test_primes),25)
         self.assertEqual(test_primes[-1],97)
     
     def test_primes1e3(self):
-        test_primes = NT.primes(1000L)
+        test_primes = P.primes(1000L)
         self.assertEqual(len(test_primes),168)
         self.assertEqual(test_primes[-1],997)
     
     def test_primes1e4(self):
-        test_primes = NT.primes(10000L)
+        test_primes = P.primes(10000L)
         self.assertEqual(len(test_primes),1229)
         self.assertEqual(test_primes[-1],9973)
     
     def test_primes1e5(self):
-        test_primes = NT.primes(100000L)
+        test_primes = P.primes(100000L)
         self.assertEqual(len(test_primes),9592)
         self.assertEqual(test_primes[-1],99991)
     
     def test_primes1e6(self):
-        test_primes = NT.primes(1000000L)
+        test_primes = P.primes(1000000L)
         self.assertEqual(len(test_primes),78498)
         
     def test_is_square(self):
