@@ -9,6 +9,14 @@ eulerlib package
 Submodules
 ----------
 
+eulerlib.prime_numbers module
+-----------------------------
+
+.. automodule:: eulerlib.prime_numbers
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 eulerlib.numtheory module
 -------------------------
 

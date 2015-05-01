@@ -30,8 +30,9 @@ from itertools import compress as it_compress
 from itertools import cycle as it_cycle
 
 def prime_gen():
-    """A generator function that yields prime numbers using the sieve of
-       Eratosthanes.
+    """A generator function that yields prime numbers using the `Sieve of
+    Eratosthenes <http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes>`_
+    algorithm.
        
     .. note::
     
@@ -62,8 +63,9 @@ def prime_gen():
 
 
 def prime_wheel_fact_gen():
-    """A generator function that yields prime numbers using the wheel
-       factorized sieve of Eratosthenes.
+    """A generator function that yields prime numbers using the `wheel
+    factorized <http://en.wikipedia.org/wiki/Wheel_factorization>`_ `Sieve of 
+    Eratosthenes`_.
     
     .. note::
     
@@ -107,7 +109,8 @@ def prime_wheel_fact_gen():
       
 
 def primes(num):
-    """Returns a list of prime numbers.
+    """Returns a list of prime numbers. Uses the 
+    :func:`eulerlib.prime_numbers.prime_gen` generator function.
     
     :param num: The upper limit for prime numbers list (pn < num)
     :returns: List of prime numbers [p1,p2,...pn] such that pn < num.
@@ -127,7 +130,8 @@ def primes(num):
 
 
 def primes_wheel_fact(num):
-    """Returns a list of prime numbers.
+    """Returns a list of prime numbers. Uses the 
+    :func:`eulerlib.prime_numbers.prime_wheel_fact_gen` generator function.
     
     :param num: The upper limit for prime numbers list (pn < num)
     :returns: List of prime numbers [p1,p2,...pn] such that pn < num.
@@ -148,7 +152,7 @@ def primes_wheel_fact(num):
 
 
 def is_prime(num):
-    """Returns *True* if *num* is a prime number.
+    """Primality checking function: returns *True* if *num* is a prime number.
     """
     result = True
     if num < 4:

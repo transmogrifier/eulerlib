@@ -15,13 +15,13 @@
 
 """
 .. module:: eulerlib.pythagoras
-    :synopsis: Functions related to Pythagorean triples
+    :synopsis: Functions related to Pythagorean triples.
 
 .. moduleauthor:: Sameer Marathe
 
 """
 
-__all__ = ["primitive_triples"]
+__all__ = ["triplet_gen", "primitive_triples"]
 
 def _xform(t,n):
     """Matrix transform triplet *t* using *n*th matrix (n = 1,2 or 3)"""
@@ -45,8 +45,10 @@ def _xform(t,n):
     else:
         return (b,a,c)
 
-def _triplet():
-    """A generator function for primitive Pythagorean triples."""
+def triplet_gen():
+    """A generator function that yields primitive `Pythagorean triples`_.
+    """
+    
     oldstack = [(3,4,5)]
     newstack = []
     while True:
@@ -59,13 +61,15 @@ def _triplet():
         yield t0
 
 def primitive_triples(n):
-    """Returns *n* primitive Pythagorean triples.
+    """Returns *n* primitive `Pythagorean triples 
+    <http://en.wikipedia.org/wiki/Pythagorean_triple>`_.
     
     :param n: Maximum number of primitive triples desired.
     :returns: A list of tuples [(a1,b1,c1),(a2,b2,c2),...,(an,bn,cn)]
     """
-    tgen = _triplet()
+    tgen = triplet_gen()
     result = [next(tgen) for i in range(n)]
+    tgen.close()
     return result
         
             

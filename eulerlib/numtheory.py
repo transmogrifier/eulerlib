@@ -37,7 +37,9 @@ def is_square(num):
        * *is_square* is *True* if *num* is a perfect square. 
        * The integer *root* <= (square root of *num*).
     
-    Uses *digit by digit* algorithm in base 10.
+    Uses `Digit-by-digit algorithm 
+    <http://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Digit-by-
+    digit_calculation>`_ in base 10.
     """
     if(num == 0):
         pn = 0
@@ -73,7 +75,9 @@ def gcd(a,b):
     :param b: Second integer
     :returns: Greatest Common Divisor (GCD) of *a* and *b*
     
-    Uses Euclid's algorithm.
+    Uses `Euclid's algorithm 
+    <http://en.wikipedia.org/wiki/Greatest_common_divisor#
+    Using_Euclid.27s_algorithm>`_.    
     """
     if(a==b): return a
     if(a== 0): return b
@@ -92,7 +96,9 @@ def gcd(a,b):
 
 
 def lcm(a,b):
-    """Calculates the Least Common Multiple (LCM) of two integers.
+    """Calculates the `Least Common Multiple 
+    <http://en.wikipedia.org/wiki/Least_common_multiple>`_ (LCM) of two 
+    integers.
     
     :param a: First integer
     :param b: Second integer
@@ -105,7 +111,8 @@ def lcm(a,b):
 
 
 def lcm_n(num_list):
-    """Calculate the Least Common Multiple of a list of integers.
+    """Calculate the `Least Common Multiple`_ of a list of 
+    integers.
     
     :param num_list: A list of integers *[i1,i2,i3,...,in]*
     :returns: LCM of the integers in *num_list*
@@ -137,7 +144,7 @@ def nCr(n,r):
     .. note::
         
         :sup:`n` C :sub:`r` is typically read as *n combination r*. Order of 
-        members is *not* important in the combination. E.g. There are :sup:`4`   
+        members *is not* important in the combination. E.g. There are :sup:`4`   
         C :sub:`2` = 6 ways of selecting two members out of a collection 
         (A, B, C, D) => AB, AC, AD, BC, BD, CD.
     """
@@ -153,7 +160,7 @@ def nCr(n,r):
 
 
 def nPr(n,r):
-    """Calculate number of permutations of lengt *r* out of a collection of 
+    """Calculate number of permutations of length *r* out of a collection of 
     *n* members (No repeated members).
     
     :param n: Size of the collection
@@ -178,7 +185,8 @@ def nPr(n,r):
 
 
 def digital_sum(num):
-    """Calculate the digital sum of a number *num* in base 10
+    """Calculate the `digital sum <http://en.wikipedia.org/wiki/Digit_sum>`_
+    of a number *num* in base 10
     
     :param num: Number for which digital sum is to be calculated. *num* should
                 be in base 10.
@@ -192,7 +200,8 @@ def digital_sum(num):
 
 
 def digital_root(num):
-    """Calculate the digital root of a number *num* in base 10
+    """Calculate the `digital root 
+    <http://en.wikipedia.org/wiki/Digital_root>`_ of a number *num* in base 10.
     
     :param num: Number for which digital root is to be calculated. *num* 
                 should be in base 10.
@@ -207,12 +216,13 @@ def digital_root(num):
 
 
 class Divisors:
-    """Implements methods related to prime factors and divisors."""
+    """Implements methods related to prime factors and divisors.
+    
+    :param maxnum: Upper limit for the list of primes. (default = 1000)
+    """
     
     def __init__(self,maxnum=1000):
         """Constructor for *Divisors* class
-        
-        :param maxnum: Upper limit for the list of primes. (default = 1000)
         """
         self.limit = maxnum
         self.primes_table = primes(maxnum)
@@ -222,7 +232,8 @@ class Divisors:
         self.divisors_table = {}
 
     def sigma_function(self,num):
-        """Calculates the divisor functions (sigma functions).
+        """Calculates the `divisor functions 
+        <http://en.wikipedia.org/wiki/Divisor_function>`_ (sigma functions).
         
         :param num: Integer for which sigma functions are needed.
         :returns: A tuple (sigma0,sigma1,s(n))
@@ -259,12 +270,13 @@ class Divisors:
             return result
 
     def prime_factors(self,num):
-        """Returns the prime factors of *num*
-        
+        """Returns the `prime factors`_ *pf* :sub:`i` of *num* and the maximum
+        power *a* :sub:`i` for each prime factor *pf* :sub:`i`.
+            
         :param num: An integer for which prime factors are needed
         :returns: A list of tuples [(pf1,a1),...(pfi,ai)]
         
-       .. note::
+        .. note::
         
             num = (pf1**a1)*(pf2**a2)..*(pfi**ai)
         """
@@ -298,7 +310,8 @@ class Divisors:
             return result
 
     def prime_factors_only(self,num):
-        """Returns the prime factors of *num*
+        """Returns the `prime factors 
+        <http://en.wikipedia.org/wiki/Prime_factor>`_ *pf* :sub:`i` of *num*.
         
         :param num: An integer for which prime factors are needed
         :returns: A list [pf1,pf2,...pfi] of prime factors of *num*
@@ -360,7 +373,8 @@ class Divisors:
             return result
 
     def phi(self,num):
-        """Returns the number of totatives of *num*
+        """Returns the number of `totatives 
+        <http://en.wikipedia.org/wiki/Totative>`_ of *num*
         
         :param num: Integer for which number of totatives are needed.
         :returns: Number of totatives of *num*
@@ -370,7 +384,8 @@ class Divisors:
             A totative of an integer *num* is any integer *i* such that,
             0 < i < n and *GCD(i,num) == 1*.
         
-        Uses Euler's totient function.
+        Uses `Euler's totient function 
+        <http://en.wikipedia.org/wiki/Euler%27s_totient_function>`_.
         """
         if(num < 1L):
             return 0L

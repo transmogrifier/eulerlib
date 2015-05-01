@@ -21,10 +21,11 @@
 
 """
 
-__all__ = ["first_n_fibo", "fibo_less_than", "fibo_num_digits"]
+__all__ = ["fibo_gen", "first_n_fibo", "fibo_less_than", "fibo_num_digits"]
 
-def _fibogen(start=1):
-    """A generator for Fibonacci sequence.
+def fibo_gen(start=1):
+    """A generator function that yields the `Fibonacci sequence 
+    <http://en.wikipedia.org/wiki/Fibonacci_number>`_.
     
     :param start: Starting digit of Fibonacci sequence (0 or 1, default=1)
     """
@@ -53,36 +54,38 @@ def _fibogen(start=1):
 
 
 def first_n_fibo(n,start=1):
-    """Get first *n* numbers in the Fibonacci sequence
+    """Get first *n* numbers in the `Fibonacci sequence`_.
     
     :param n: Desired length of Fibonacci sequence
     :param start: Starting digit of Fibonacci sequence (0 or 1, default=1)
     :returns: A list [f1,f2,...,fn] where f1 = 1 if start = 1
     """
-    myfibo = _fibogen(start)
+    myfibo = fibo_gen(start)
     result = [next(myfibo) for i in range(n)]
+    myfibo.close()
     return result
 
 
 def fibo_less_than(n,start=1):
-    """Get the Fibonacci sequence [f1,f2,...fi] such that fi < n"
+    """Get the `Fibonacci sequence`_ [f1,f2,...fi] such that fi < n.
     
     :param n: Desired maximum value.
     :param start: Starting digit of Fibonacci sequence (0 or 1, default=1)
     :returns: A list [f1,f2,...,fi] such that fi < n
     """
-    myfibo = _fibogen(start)
+    myfibo = fibo_gen(start)
     result = []
     for f in myfibo:
         if f < n:
             result.append(f)
         else:
             break
+    myfibo.close()
     return result
 
 
 def fibo_num_digits(num,start=1):
-    """Get the Fibonacci sequence [f1,f2,...fi] such that fi is the first
+    """Get the `Fibonacci sequence`_ [f1,f2,...fi] such that fi is the first
     Fibonacci number to have *num* digits.
     
     :param num: Desired number of digits in the last term of sequence.
@@ -90,7 +93,7 @@ def fibo_num_digits(num,start=1):
     :returns: A list [f1,f2,..fi] such that fi is the first Fibonacci number
               to have *num* digits
     """
-    myfibo = _fibogen(start)
+    myfibo = fibo_gen(start)
     result = []
     numdigits = 0
     for f in myfibo:
@@ -100,5 +103,6 @@ def fibo_num_digits(num,start=1):
         elif numdigits == num:
             result.append(f)
             break
+    myfibo.close()
     return result
         
