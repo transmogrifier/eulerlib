@@ -22,7 +22,7 @@ def readme():
         return f.read()
 
 setup(name='eulerlib',
-      version='0.1',
+      version='0.2',
       description=('A library of number theory related '
                    'functions inspired by Project Euler.'),
       long_description=readme(),
