@@ -101,19 +101,19 @@ def is_pandigital(num,start,stop):
         True
     """
     if(start < 0 or stop < 0 or start >9 or stop >9):
-        print "Error: start or stop is invalid"
+        print("Error: start or stop is invalid") # TO DO: raise exception
         return False
     elif(stop < start):
-        print "Error: stop > start"
+        print("Error: stop > start") # TO DO: raise exception
         return False
     else:
-        test = range(start,stop+1)
+        test = list(range(start,stop+1))
         nl = num_to_list(num)
         if(len(nl) != (stop-start)+1):
             return False
         else:
             nl.sort()
-            if(nl ==test):
+            if(nl == test):
                 return True
             else:
                 return False
@@ -133,16 +133,16 @@ def num_to_list(num):
 
 def list_to_num(list_of_digits):
     """Returns an integer from a *list_of_digits*."""
-    num = 0L
+    num = 0
     if(list_of_digits == []):
         return num
     test = range(10)
     for digit in list_of_digits:
         if(not (digit in test)):
-            print "Error: invalid members in list_of_digits"
-            num = 0L
+            print("Error: invalid members in list_of_digits") # TO DO: excep
+            num = 0
             break
-        num = num*10L + digit
+        num = num*10 + digit
     return num
 
 
@@ -151,21 +151,21 @@ def word_numerical_val(word):
        word based on its position in the alphabet.
     """
     import string
-    num_val = 0L
+    num_val = 0
     lcase = string.ascii_lowercase
     test_word = word.lower()
     for char in test_word:
         if not char in lcase:
-            print "Error: Illegal character in the word"
-            num_val = 0L
+            print("Error: Illegal character in the word")
+            num_val = 0
             break
         else:
             loc = lcase.find(char)
             if (loc != -1):
                 num_val = num_val + loc + 1
             else:
-                print "Error: Illegal character in the word"
-                num_val = 0L
+                print("Error: Illegal character in the word")
+                num_val = 0
                 break
     return num_val
 

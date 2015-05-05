@@ -104,7 +104,7 @@ def lcm(a,b):
     :param b: Second integer
     :returns: Least Common Multiple (LCM) of *a* and *b*
     """
-    lcm_ab = 0L
+    lcm_ab = 0
     if a!=0 or b!=0:
         lcm_ab = abs(a*b)/gcd(a,b)
     return lcm_ab  
@@ -119,9 +119,9 @@ def lcm_n(num_list):
     
     Uses the associative property LCM(a,b,c) = LCM(*LCM(a,b)*,c)
     """
-    result = 0L
+    result = 0
     lennum = len(num_list)
-    if not (lennum <=1 or sum(num_list) == 0L):
+    if not (lennum <=1 or sum(num_list) == 0):
         cindex = 1
         while cindex < lennum:
             if cindex == 1:
@@ -351,7 +351,7 @@ class Divisors:
         result = []
         if (num < 1) or (num > self.limit):
             return result
-        result.append(1L)
+        result.append(1)
         if (num == 1):
             return result
         elif (num in self.primes_table):
@@ -387,14 +387,14 @@ class Divisors:
         Uses `Euler's totient function 
         <http://en.wikipedia.org/wiki/Euler%27s_totient_function>`_.
         """
-        if(num < 1L):
-            return 0L
-        if(num == 1L):
-            return 1L
+        if(num < 1):
+            return 0
+        if(num == 1):
+            return 1
         if(num in self.primes_table):
-            return long(num-1)
+            return num-1
         pfs = self.prime_factors_only(num)
-        prod = long(num)
+        prod = num
         for pfi in pfs:
             prod = prod*(pfi-1)/pfi
         return prod

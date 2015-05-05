@@ -9,6 +9,7 @@ functions include:
 * Divisor functions (sigma functions)
 * Euler's totient function
 * Greatest Common Divisor (GCD) using Euclid's algorithm
+* Least Common Multiple (LCM)
 * Integer square root
 * Fibonacci numbers
 * Pandigital numbers
@@ -34,7 +35,7 @@ In Python console you can import functions/classes from eulerlib as needed. ::
 
    >>> from eulerlib import primes
    >>> p10 = primes(10)
-   >>> print p10
+   >>> print(p10)
    [2, 3, 5, 7]
 
 The *Divisors* class implements functions related to prime factorization,
@@ -43,10 +44,10 @@ sigma functions etc. ::
    >>> from eulerlib import Divisors
    >>> mydiv = Divisors(10000)
    >>> div84 = mydiv.divisors(84) #divisors of 84
-   >>> print div84
-   [1L, 2L, 3L, 4L, 6L, 7L, 12L, 14L, 21L, 28L, 42L, 84L]
-   >>> pf840 = mydiv.prime_factors(840) #prime factors of 840
-   >>> print pf840
+   >>> print(div84)
+   [1, 2, 3, 4, 6, 7, 12, 14, 21, 28, 42, 84]
+   >>> pf840 = mydiv.prime_factors(840) # prime factors of 840
+   >>> print(pf840)
    [(2, 3), (3, 1), (5, 1), (7, 1)]
 
 **Example**: Solved `Project Euler`_ `problem 3`_. ::
@@ -70,23 +71,28 @@ See complete `documentation`_.
 
 Modules
 -------
-+--------------+--------------------------------------------------------------+
-|numtheory.py  | * Function to generate lists of primes.                      |
-|              | * Euler's divisor functions (sigma funtions)                 |
-|              | * Euler's totient function (phi function)                    |
-|              | * Greatest Common Divisor (GCD)                              |
-+--------------+--------------------------------------------------------------+
-|fibonacci.py  | Functions related to the Fibonacci sequence.                 |
-+--------------+--------------------------------------------------------------+
-|pythagoras.py | Functions related to Pythagorean triples.                    |
-+--------------+--------------------------------------------------------------+
-|etc.py        | Miscellaneous functions:                                     |
-|              |                                                              |
-|              | * Pandigital numbers                                         |
-|              | * Conversion from decimal to base n (2-36)                   |
-|              | * Number to lists and vice versa                             |
-|              | * Palindrome numbers                                         |
-+--------------+--------------------------------------------------------------+
++----------------+------------------------------------------------------------+
+|prime_numbers.py| Functions to generate lists of primes.                     |
++----------------+------------------------------------------------------------+
+|numtheory.py    | * Euler's divisor functions (sigma funtions)               |
+|                | * Euler's totient function (phi function)                  |
+|                | * Prime factors of a number                                |
+|                | * Divisors of a number                                     |
+|                | * Greatest Common Divisor (GCD)                            |
+|                | * Least Common Multiple (LCM)                              |
+|                | * Digital root and digital sum of a number                 |
++----------------+------------------------------------------------------------+
+|fibonacci.py    | Functions related to the Fibonacci sequence.               |
++----------------+------------------------------------------------------------+
+|pythagoras.py   | Functions related to Pythagorean triples.                  |
++----------------+------------------------------------------------------------+
+|etc.py          | Miscellaneous functions:                                   |
+|                |                                                            |
+|                | * Pandigital numbers                                       |
+|                | * Conversion from decimal to base n (2-36)                 |
+|                | * Number to lists and vice versa                           |
+|                | * Palindrome numbers                                       |
++----------------+------------------------------------------------------------+
 
 Development
 -----------

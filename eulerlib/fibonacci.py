@@ -30,7 +30,7 @@ def fibo_gen(start=1):
     :param start: Starting digit of Fibonacci sequence (0 or 1, default=1)
     """
     if start!= 0 and  start!= 1:
-        print "Assuming start = 1"
+        print("Assuming start = 1") # TO DO: Raise exception instead of print
         start = 1
     if start == 0:
         f1 = 0

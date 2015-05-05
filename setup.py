@@ -34,6 +34,7 @@ setup(name='eulerlib',
         'Development Status :: 4 - Beta',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.4',
         'Topic :: Scientific/Engineering :: Mathematics',
         'Intended Audience :: Developers',
         'Intended Audience :: Science/Research',
@@ -41,9 +42,6 @@ setup(name='eulerlib',
       ],
       keywords='mathematics project_euler number_theory prime_numbers',
       packages= find_packages(exclude=['eulerlib._tests']),
-      install_requires=[
-      'bitarray'
-      ],
       test_suite='eulerlib._tests',
       zip_safe=False)
 
