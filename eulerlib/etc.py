@@ -21,6 +21,8 @@
 
 """
 
+from ._exceptions import EulerlibInputError
+
 __all__ = ["decimal_to_base", "is_palindrome", "is_pandigital", "num_to_list",
            "list_to_num", "word_numerical_val", "write_number", 
            "collapse_lists"]
@@ -101,11 +103,11 @@ def is_pandigital(num,start,stop):
         True
     """
     if(start < 0 or stop < 0 or start >9 or stop >9):
-        print("Error: start or stop is invalid") # TO DO: raise exception
-        return False
+        raise EulerlibInputError('etc','is_pandigital',
+                                 'start or stop parameter value is incorrect')
     elif(stop < start):
-        print("Error: stop > start") # TO DO: raise exception
-        return False
+        raise EulerlibInputError('etc','is_pandigital',
+                                 'start should be smaller than stop')
     else:
         test = list(range(start,stop+1))
         nl = num_to_list(num)
@@ -139,7 +141,8 @@ def list_to_num(list_of_digits):
     test = range(10)
     for digit in list_of_digits:
         if(not (digit in test)):
-            print("Error: invalid members in list_of_digits") # TO DO: excep
+            raise EulerlibInputError('etc','list_to_num',
+                                     'Invalid member in list_of_digits')
             num = 0
             break
         num = num*10 + digit
@@ -156,7 +159,8 @@ def word_numerical_val(word):
     test_word = word.lower()
     for char in test_word:
         if not char in lcase:
-            print("Error: Illegal character in the word")
+            raise EulerlibInputError('etc','word_numerical_val',
+                                     'Illegal character in the word')
             num_val = 0
             break
         else:
@@ -164,7 +168,8 @@ def word_numerical_val(word):
             if (loc != -1):
                 num_val = num_val + loc + 1
             else:
-                print("Error: Illegal character in the word")
+                raise EulerlibInputError('etc','word_numerical_val',
+                                         'Illegal character in the word')
                 num_val = 0
                 break
     return num_val

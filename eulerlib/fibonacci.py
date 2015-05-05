@@ -21,6 +21,8 @@
 
 """
 
+from ._exceptions import EulerlibInputError
+
 __all__ = ["fibo_gen", "first_n_fibo", "fibo_less_than", "fibo_num_digits"]
 
 def fibo_gen(start=1):
@@ -30,27 +32,28 @@ def fibo_gen(start=1):
     :param start: Starting digit of Fibonacci sequence (0 or 1, default=1)
     """
     if start!= 0 and  start!= 1:
-        print("Assuming start = 1") # TO DO: Raise exception instead of print
-        start = 1
-    if start == 0:
-        f1 = 0
-        f2 = 1
-    elif start == 1:
-        f1 = 1
-        f2 = 1        
-    nextf = 0
-    count = 0
-    while True:
-        if count == 0:
-            nextf = f1
-        elif count == 1:
-            nextf = f2
-        else:
-            nextf = f1 + f2
-            f1 = f2
-            f2 = nextf
-        count += 1
-        yield nextf
+        raise EulerlibInputError('fibonacci','fibo_gen',
+                                 'start parameter value is incorrect')
+    else:
+        if start == 0:
+            f1 = 0
+            f2 = 1
+        elif start == 1:
+            f1 = 1
+            f2 = 1        
+        nextf = 0
+        count = 0
+        while True:
+            if count == 0:
+                nextf = f1
+            elif count == 1:
+                nextf = f2
+            else:
+                nextf = f1 + f2
+                f1 = f2
+                f2 = nextf
+            count += 1
+            yield nextf
 
 
 def first_n_fibo(n,start=1):

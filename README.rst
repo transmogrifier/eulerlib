@@ -1,9 +1,8 @@
-EulerLib
+eulerlib
 ********
 
-*Eulerlib* is a library of recreational mathematics and number theory related 
-functions inspired by  `Project Euler`_. Available 
-functions include:
+`eulerlib`_ is a library of recreational mathematics and number theory related
+functions inspired by  `Project Euler`_. Available functions include:
 
 * Prime number generation
 * Divisor functions (sigma functions)
@@ -21,7 +20,8 @@ programming problems such as problems in Project Euler.
 
 Installation
 ------------
-*eulerlib* is avalaible through Python Package Index (`PyPI`_) using `pip`_. ::
+`eulerlib`_ is avalaible through Python Package Index (`PyPI`_) using `pip`_.
+::
 
    >>> pip install --upgrade eulerlib
 
@@ -112,3 +112,4 @@ eulerlib is licensed under `Apache License 2.0`_.
 .. _BitBucket: https://bitbucket.org/transmogrifier/eulerlib
 .. _Bug reports: https://github.com/transmogrifier/eulerlib/issues
 .. _documentation: http://pythonhosted.org/eulerlib
+.. _eulerlib: https://pypi.python.org/pypi/eulerlib
